@@ -10,6 +10,7 @@ pipeline {
                     sh '''
                         echo "PATH = ${PATH}"
                         echo "M2_HOME = ${M2_HOME}"
+                        echo "JAVA_HOME" = $ {JAVA_HOME}"   "
                     '''
                 }
             }
@@ -18,7 +19,7 @@ pipeline {
                 steps {
                     sh '''
                         echo "Building $MODULE"
-                        mvn -pl $MODULE clean compile --also-make
+                        mvn -B -DskipTests clean package
                     '''
                 }
                 post {
