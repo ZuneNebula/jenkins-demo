@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'MAVEN'
-        jdk 'JDK'
+        jdk 'JAVA_HOME'
     }
      stages {
             stage ('Initialize') {
