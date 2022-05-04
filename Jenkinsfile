@@ -16,7 +16,10 @@ pipeline {
 
             stage ('Build') {
                 steps {
-                    sh 'mvn -Dmaven.test.failure.ignore=true install'
+                    sh '''
+                        echo "Building $MODULE"
+                        mvn -pl $MODULE clean compile --also-make
+                    '''
                 }
                 post {
                     success {
