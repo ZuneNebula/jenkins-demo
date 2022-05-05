@@ -18,7 +18,7 @@ pipeline {
                 steps {
                     sh '''
                         echo "Building $MODULE"
-                        mvn -B -DskipTests clean package
+                        mvn clean package
                     '''
                 }
                 post {
